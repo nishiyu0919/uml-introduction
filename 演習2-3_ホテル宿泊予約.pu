@@ -1,4 +1,4 @@
-@startuml 例題2-3
+@startuml 例題2-3修正
 rectangle ホテル {
 usecase 予約
 usecase ログイン
