@@ -4,7 +4,7 @@ title ホテル予約システム
 
 actor 利用者 
 actor 従業員
-actor 管理者 as Administrator
+actor 管理者 
 
 rectangle "システム" {
 
@@ -20,16 +20,16 @@ rectangle "システム" {
   管理者 --> (予約の集計)
   管理者 --> (ログイン)
 
-  note left of User
+  note left of 利用者
     利用者が予約を行う場合は、ログインが必要。
     会員登録は予約時に行うことができ、予約を行わわずに会員登録だけを行うことができます。
   end note
 
-  note left of Employee
+  note left of 従業員
     従業員がシステムを使用する場合は、ログインが必要。
   end note
 
-  note left of Administrator
+  note left of 管理者
     管理者のみが予約の集計を行うことができます。
   end note
 
