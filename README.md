@@ -1,4 +1,4 @@
-# uml-introduction
+# uml-intro
 
 #　見出し
 盛岡情報ビジネス＆デザイン専門学校
