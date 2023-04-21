@@ -1,0 +1,42 @@
+@startuml 演習2-8
+
+title ホテル予約システム
+
+actor 利用者 as User
+actor 従業員 as Employee
+actor 管理者 as Administrator
+
+rectangle "システム" {
+
+  User --> (空室状況を閲覧)
+  User --> (部屋を予約)
+  User --> (ログイン)
+
+  (会員登録) ..> (ログイン) : 可能
+
+  Employee --> (空室状況を入力)
+  Employee --> (ログイン)
+
+  Administrator --> (予約の集計)
+  Administrator --> (ログイン)
+
+  note left of User
+    利用者が予約を行う場合は、ログインが必要。
+    会員登録は予約時に行うことができ、予約を行わわずに会員登録だけを行うことができます。
+  end note
+
+  note left of Employee
+    従業員がシステムを使用する場合は、ログインが必要。
+  end note
+
+  note left of Administrator
+    管理者のみが予約の集計を行うことができます。
+  end note
+
+  note bottom
+    キャンペーン期間中は、宿泊費がキャンペーン価格になります。
+  end note
+
+}
+
+@enduml
