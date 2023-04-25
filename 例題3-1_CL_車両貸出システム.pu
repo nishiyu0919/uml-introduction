@@ -25,7 +25,7 @@ class 顧客{
     - 管理番号:String
   }
   class 貸出{
-  - 貸出番号:int
+    - 貸出番号:int
   }
 
   hide 顧客 circle
