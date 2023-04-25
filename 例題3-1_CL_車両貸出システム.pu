@@ -1,5 +1,5 @@
 @startuml 演習3-1
-skinparam ClassAttributeFontSize 0
+' skinparam ClassAttributeFontSize 0
 class 顧客{
        - 氏名:String
        - 電話番号:String
