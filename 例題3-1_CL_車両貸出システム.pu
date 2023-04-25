@@ -24,10 +24,14 @@ class 顧客{
   class 空車リスト{
     - 管理番号:String
   }
+  class 貸出{
+  - 貸出番号:int
+  }
+
   hide 顧客 circle
   hide 車 circle
   hide 予約 circle
   hide 空車リスト circle
-  hide 貸し出し circle
-  
+  hide 貸出 circle
+
 @enduml
