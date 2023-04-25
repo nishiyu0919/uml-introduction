@@ -13,7 +13,6 @@ class 顧客{
     - 管理番号:String
     - 車種:String
     - 駆動形態:String
-    - 
   }
   class 予約{
     - 予約番号:String
@@ -22,7 +21,7 @@ class 顧客{
     - 顧客ID:int
   }
   class 空車リスト{
-    - 管理番号:String
+    - 車種:String
   }
   class 貸出{
     - 貸出番号:int
