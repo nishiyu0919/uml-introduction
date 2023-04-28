@@ -4,6 +4,7 @@ skinparam ClassAttributeFontSize 0
 class 会社{}
 class 社員{}
 会社"1"--"*" 社員
+会社"雇用者"--"従業員" 社員
 会員リスト o-- 会員
 
 note right of 会員リスト
