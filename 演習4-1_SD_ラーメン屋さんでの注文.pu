@@ -14,9 +14,9 @@ custmer -> clerk:ラーメンを注文する
   activate cook
   cook -> cook:調理をする
   deactivate clerk
-  custmer <- clerk:ラーメンを注文する
+  clerk <- cook:ラーメン
   deactivate cook
-  custmer <- cook:ラーメン
+  custmer <- clerk:ラーメン
 deactivate custmer
 @enduml
 
