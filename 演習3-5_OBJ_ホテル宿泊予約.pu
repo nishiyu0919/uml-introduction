@@ -1,31 +1,52 @@
 @startuml 演習3-5
-
+skinparam classAttributeIconSize 0
 class ホテル {
+    - rooms: 部屋[]
+    - members: 利用者[]
+    + getAvailableRooms(checkInDate: 日付, checkOutDate: 日付): 部屋[]
+    + reserveRoom(memberId: 文字列, roomNumber: 文字列, checkInDate: 日付, checkOutDate: 日付): 予約
 }
 
 class 部屋 {
-  - 客室番号
-  - 客室タイプ
-  - 客室料
-}
-
-class キャンペーン {
-  - 開始日
-  - 終了日
-  - キャンペーン価格
+    - number: 文字列
+    - type: 文字列 = "シングル"
+    - rate: 整数 = 11000
+    - discountedRate: 整数 = 9000
+    - isAvailable: 真偽値
+    + reserve(checkInDate: 日付, checkOutDate: 日付): 無効
+    + cancelReservation(): 無効
 }
 
 class 利用者 {
-  - 利用者名
-  - チェックイン日
-  - 宿泊期間
+    - id: 文字列
+    - name: 文字列
+    - reservations: 予約[]
 }
 
-ホテル o-- 部屋
-ホテル o-- キャンペーン
-ホテル o-- 利用者
+ホテル -> 部屋 : has multiple
+ホテル -> 利用者 : has registered
 
-部屋 *-- 利用者: 予約
-キャンペーン -- 部屋: 適用される対象
+ホテル --> 301号室 : uses
+ホテル --> 303号室 : uses
+
+class 301号室 {
+    - number: 文字列 = "301"
+    - type: 文字列 = "シングル"
+    - rate: 整数 = 11000
+    - discountedRate: 整数 = 9000
+    - isAvailable: 真偽値 = true
+    + reserve(checkInDate: 日付, checkOutDate: 日付): 無効
+    + cancelReservation(): 無効
+}
+
+class 303号室 {
+    - number: 文字列 = "303"
+    - type: 文字列 = "シングル"
+    - rate: 整数 = 11000
+    - discountedRate: 整数 = 9000
+    - isAvailable: 真偽値 = true
+    + reserve(checkInDate: 日付, checkOutDate: 日付): 無効
+    + cancelReservation(): 無効
+}
 
 @enduml
