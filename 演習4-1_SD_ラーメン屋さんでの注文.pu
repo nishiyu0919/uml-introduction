@@ -13,12 +13,10 @@ custmer -> clerk:ラーメンを注文する
   clerk -> cook: 調理を指示する
   activate cook
   cook -> cook:調理をする
-  deactivate clerk
+  
   clerk <-- cook:ラーメン
-  deactivate cook
+  
   
   custmer <-- clerk:ラーメン
-deactivate custmer
+
 @enduml
-
-
