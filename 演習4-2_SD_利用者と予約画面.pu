@@ -1,0 +1,13 @@
+@startuml 演習4-2
+title ログインと認証のシーケンス図
+
+object 利用者
+object 予約画面
+
+利用者 -> 予約画面: ログイン(非同期)
+activate 予約画面
+
+予約画面 -> 予約画面: 認証(同期)
+deactivate 予約画面
+
+@enduml
