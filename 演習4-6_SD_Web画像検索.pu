@@ -1,4 +1,4 @@
-@startuml
+@startuml 演習4-6
 title Webページで画像を検索して閲覧するシーケンス図
 
 actor ユーザー
