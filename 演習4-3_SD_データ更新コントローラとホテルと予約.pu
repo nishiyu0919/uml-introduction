@@ -1,14 +1,18 @@
 @startuml 演習4-3
-title データ更新と予約登録のシーケンス図
 
-object データ更新コントローラクラス
-object ホテルクラス
-object 予約オブジェクト
+participant "データ更新コントローラ" as controller
+participant "ホテル" as hotel
+participant "予約" as reservation <<create>>
 
-データ更新コントローラクラス -> ホテルクラス: 予約操作を呼び出す
-
-ホテルクラス -> 予約オブジェクト: 予約オブジェクトを作成する
-
-ホテルクラス -> ホテルクラス: 予約登録操作を呼び出す
+controller -> hotel: 予約操作を呼び出す
+activate hotel
+hotel -> hotel: 予約オブジェクトを作成する
+hotel -> reservation: 予約操作を呼び出す
+activate reservation
+reservation -> reservation: 予約登録（再帰呼出）
+reservation --> hotel: 予約結果を返す
+deactivate reservation
+hotel --> controller: 予約結果を返す
+deactivate hotel
 
 @enduml

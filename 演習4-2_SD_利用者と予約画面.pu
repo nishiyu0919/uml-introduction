@@ -1,11 +1,22 @@
-@startuml 演習4-2
-title ログインと認証のシーケンス図
+@startuml 4-2
 
-object 利用者
-object 予約画面
+participant User as user
+participant ReservationScreen as reservationScreen
 
-利用者 -> 予約画面: ログイン（非同期）  非同期の操作
+user -> reservationScreen: ログイン (非同期)
+activate user
+activate reservationScreen
+user <-- reservationScreen: ログインメッセージを返す (非同期)
+deactivate reservationScreen
+deactivate user
 
-予約画面 -> 予約画面: 認証（同期）
+user -> reservationScreen: 確認操作の呼び出し (同期)
+activate user
+activate reservationScreen
+user -> reservationScreen: 認証する (同期)
+activate reservationScreen
+user <-- reservationScreen: 認証結果を返す (同期)
+deactivate reservationScreen
+deactivate user
 
 @enduml

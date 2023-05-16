@@ -1,0 +1,15 @@
+@startuml
+
+actor User
+
+participant "Browser" as Browser
+participant "Web Server" as WebServer
+participant "Image Server" as ImageServer
+
+User -> Browser: リンクボタンを押す
+Browser -> WebServer: 画像のファイル名を伝える
+WebServer -> ImageServer: 画像ファイルを探す
+WebServer <- ImageServer: 画像ファイルを返す
+Browser -> WebServer: 画像ファイルを再生する
+
+@enduml
