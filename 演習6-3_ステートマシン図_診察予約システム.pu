@@ -1,4 +1,4 @@
-@startuml 1
+@startuml 演習6-3ステートマシン図
 state メニュー
 
 
